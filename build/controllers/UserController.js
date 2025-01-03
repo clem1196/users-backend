@@ -361,7 +361,7 @@ var userEdit = function (req, res) { return __awaiter(void 0, void 0, void 0, fu
             case 31: return [3 /*break*/, 33];
             case 32:
                 error_3 = _d.sent();
-                return [2 /*return*/, res.send(error_3.srlMessage)];
+                return [2 /*return*/, res.send(error_3.sqlMessage)];
             case 33: return [2 /*return*/];
         }
     });
@@ -393,9 +393,9 @@ var userRemove = function (req, res) { return __awaiter(void 0, void 0, void 0, 
                 results = _a.sent();
                 if (results.affected === 1) {
                     if (user[0].user_id !== AuthMiddleware_1.deco[AuthMiddleware_1.deco.length - 1].userId) {
-                        return [2 /*return*/, res.status(201).send({ loginAgain: false, Message: "Se editó correctamente", results: results })];
+                        return [2 /*return*/, res.status(201).send({ loginAgain: false, Message: "Se elimió correctamente", results: results })];
                     }
-                    return [2 /*return*/, res.status(201).send({ loginAgain: true, Message: "Se editó correctamente, debe cerrar e iniciar nuevamente sesión", results: results })];
+                    return [2 /*return*/, res.status(201).send({ loginAgain: true, Message: "Se eliminó correctamente, debe cerrar e iniciar nuevamente sesión", results: results })];
                 }
                 else {
                     return [2 /*return*/, res.send({ Message: "No se pudo eliminar" })];
@@ -405,7 +405,7 @@ var userRemove = function (req, res) { return __awaiter(void 0, void 0, void 0, 
             case 6: return [3 /*break*/, 8];
             case 7:
                 error_4 = _a.sent();
-                return [2 /*return*/, res.send(error_4.srlMessage)];
+                return [2 /*return*/, res.send(error_4.sqlMessage)];
             case 8: return [2 /*return*/];
         }
     });
